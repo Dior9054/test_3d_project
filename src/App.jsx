@@ -11,13 +11,6 @@ export default function App() {
     <Canvas camera={{ position: [5, -10, 500], zoom: 1 }}>
       <OrbitControls />
       <color attach="background" args={["lightgreen"]} />
-      {/* <spotLight
-        position={[100, 10, 10]}
-        angle={2}
-        penumbra={10}
-        intensity={5}
-        castShadow
-      /> */}
       <ambientLight intensity={1} />
       <Suspense fallback={null}>
         {/* <House /> */}
