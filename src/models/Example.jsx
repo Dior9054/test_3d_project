@@ -2,6 +2,7 @@
 import { Text, useGLTF } from '@react-three/drei'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/example/untitled.glb')
@@ -45,6 +46,7 @@ export default function Model(props) {
 }
 
 function Sesh({ children, setModal }) {
+  const location = useNavigate()
   const [state, setState] = useState(true)
   let a = document.querySelector(".fucker")
 
@@ -84,6 +86,9 @@ function Sesh({ children, setModal }) {
         e.stopPropagation();
         setState(true)
       },
+      onClick: () => {
+        location(`/${Math.round(Math.random() * 5)}`)
+      },
       children: git
     }
   }
@@ -94,3 +99,4 @@ function Sesh({ children, setModal }) {
 }
 
 useGLTF.preload('/example/untitled.glb')
+
